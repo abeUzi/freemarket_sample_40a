@@ -1,19 +1,18 @@
-- breadcrumb :mypage
 .main-content
   = render 'modules/mypage-sidebar'
 
-  .right-content
-    .right-content__block#back-img.middle-center
+  .abeshi-right-content
+    .abeshi-right-content__block#back-img.middle-center
       = image_tag "avatar.jpg", alt: "avatar",class: "right-content__block--avatar"
-      .right-content__block__user-name.bold 阿部 寛
-      .right-content__block__user-about
-        %p.right-content__block__review 評価
+      .abeshi-right-content__block__user-name.bold 阿部 寛
+      .abeshi-right-content__block__user-about
+        %p.abeshi-right-content__block__review 評価
         %span.bold 90
-        %p.right-content__block__exhibit 出品数
+        %p.abeshi-right-content__block__exhibit 出品数
         %span.bold 50点
 
-    .right-content__block
-      %ul.right-content__block__tabs.back-gray
+    .abeshi-right-content__block
+      %ul.abeshi-right-content__block__tabs.back-gray
         %li.active
           %h4
             = link_to "お知らせ", root_path,class:"middle-center bold"
@@ -23,66 +22,66 @@
             = link_to "やることリスト", root_path,class:"middle-center bold"
 
 
-      %ul.right-content__block__object
+      %ul.abeshi-right-content__block__object
         %li
           = link_to root_path do
-            .right-content__block__object__link-box
+            .abeshi-right-content__block__object__link-box
               =image_tag "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", alt: "block-img",class: "right-content__block__object__link-box__img",width:"47.99px",height:"47.99px"
-              .right-content__block__object__link-box__body
-                .right-content__block__object__link-box__body--text 7日後、クーポンの有効期限が切れます！タップして詳細を確認しましょう。
-                .right-content__block__object__link-box__body--time
+              .abeshi-right-content__block__object__link-box__body
+                .abeshi-right-content__block__object__link-box__body--text 7日後、クーポンの有効期限が切れます！タップして詳細を確認しましょう。
+                .abeshi-right-content__block__object__link-box__body--time
                   %i.fa.fa-history
-                  .right-content__block__object__link-box__body--time--date 1日前
+                  .abeshi-right-content__block__object__link-box__body--time--date 1日前
               %i.fa.fa-angle-right.fa-2x
         %li
           = link_to root_path do
-            .right-content__block__object__link-box
+            .abeshi-right-content__block__object__link-box
               =image_tag "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", alt: "block-img",class: "right-content__block__object__link-box__img",width:"47.99px",height:"47.99px"
-              .right-content__block__object__link-box__body
-                .right-content__block__object__link-box__body--text 7日後、クーポンの有効期限が切れます！タップして詳細を確認しましょう。
-                .right-content__block__object__link-box__body--time
+              .abeshi-right-content__block__object__link-box__body
+                .abeshi-right-content__block__object__link-box__body--text 7日後、クーポンの有効期限が切れます！タップして詳細を確認しましょう。
+                .abeshi-right-content__block__object__link-box__body--time
                   %i.fa.fa-history
-                  .right-content__block__object__link-box__body--time--date 1日前
+                  .abeshi-right-content__block__object__link-box__body--time--date 1日前
               %i.fa.fa-angle-right.fa-2x
         %li
           = link_to root_path do
-            .right-content__block__object__link-box
+            .abeshi-right-content__block__object__link-box
               =image_tag "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", alt: "block-img",class: "right-content__block__object__link-box__img",width:"47.99px",height:"47.99px"
-              .right-content__block__object__link-box__body
-                .right-content__block__object__link-box__body--text 7日後、クーポンの有効期限が切れます！タップして詳細を確認しましょう。
-                .right-content__block__object__link-box__body--time
+              .abeshi-right-content__block__object__link-box__body
+                .abeshi-right-content__block__object__link-box__body--text 7日後、クーポンの有効期限が切れます！タップして詳細を確認しましょう。
+                .abeshi-right-content__block__object__link-box__body--time
                   %i.fa.fa-history
-                  .right-content__block__object__link-box__body--time--date 1日前
+                  .abeshi-right-content__block__object__link-box__body--time--date 1日前
               %i.fa.fa-angle-right.fa-2x
         %li
           = link_to root_path do
-            .right-content__block__object__link-box
+            .abeshi-right-content__block__object__link-box
               =image_tag "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", alt: "block-img",class: "right-content__block__object__link-box__img",width:"47.99px",height:"47.99px"
-              .right-content__block__object__link-box__body
-                .right-content__block__object__link-box__body--text 7日後、クーポンの有効期限が切れます！タップして詳細を確認しましょう。
-                .right-content__block__object__link-box__body--time
+              .abeshi-right-content__block__object__link-box__body
+                .abeshi-right-content__block__object__link-box__body--text 7日後、クーポンの有効期限が切れます！タップして詳細を確認しましょう。
+                .abeshi-right-content__block__object__link-box__body--time
                   %i.fa.fa-history
-                  .right-content__block__object__link-box__body--time--date 1日前
+                  .abeshi-right-content__block__object__link-box__body--time--date 1日前
               %i.fa.fa-angle-right.fa-2x
         %li
           = link_to root_path do
-            .right-content__block__object__link-box
+            .abeshi-right-content__block__object__link-box
               =image_tag "//static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png", alt: "block-img",class: "right-content__block__object__link-box__img",width:"47.99px",height:"47.99px"
-              .right-content__block__object__link-box__body
-                .right-content__block__object__link-box__body--text 7日後、クーポンの有効期限が切れます！タップして詳細を確認しましょう。
-                .right-content__block__object__link-box__body--time
+              .abeshi-right-content__block__object__link-box__body
+                .abeshi-right-content__block__object__link-box__body--text 7日後、クーポンの有効期限が切れます！タップして詳細を確認しましょう。
+                .abeshi-right-content__block__object__link-box__body--time
                   %i.fa.fa-history
-                  .right-content__block__object__link-box__body--time--date 1日前
+                  .abeshi-right-content__block__object__link-box__body--time--date 1日前
               %i.fa.fa-angle-right.fa-2x
         = link_to root_path do
           %li
-            .right-content__block__object__link-box
-              .right-content__block__object__link-box--string.back-gray.middle-center 一覧を見る
+            .abeshi-right-content__block__object__link-box
+              .abeshi-right-content__block__object__link-box--string.back-gray.middle-center 一覧を見る
 
 
-    .right-content__block
-      %h4.right-content__block__title.middle.bold.back-silver 購入した商品
-      %ul.right-content__block__tabs
+    .abeshi-right-content__block
+      %h4.abeshi-right-content__block__title.middle.bold.back-silver 購入した商品
+      %ul.abeshi-right-content__block__tabs
         %li.active
           %h4
             = link_to "取引中", root_path,class:"middle-center bold"
@@ -92,18 +91,18 @@
 
 
 
-      %ul.right-content__block__object
+      %ul.abeshi-right-content__block__object
         = link_to root_path do
           %li
-            .right-content__block__object__link-box
+            .abeshi-right-content__block__object__link-box
               =image_tag "avatar.jpg", alt: "item-img",class: "right-content__block__object__link-box__img",width:"47.99px",height:"47.99px"
-              .right-content__block__object__link-box__body
-                .right-content__block__object__link-box__body--text 【新品・送料込み】阿部寛
-                .right-content__block__object__link-box__body__detail.middle
-                  .right-content__block__object__link-box__body__detail--count-box
+              .abeshi-right-content__block__object__link-box__body
+                .abeshi-right-content__block__object__link-box__body--text 【新品・送料込み】阿部寛
+                .abeshi-right-content__block__object__link-box__body__detail.middle
+                  .abeshi-right-content__block__object__link-box__body__detail--count-box
                     %i.fa.fa-heart-o
                     .like-count 50
-                  .right-content__block__object__link-box__body__detail--count-box
+                  .abeshi-right-content__block__object__link-box__body__detail--count-box
                     %i.fa.fa-comment-o
                     .comment-count 1000
                   .status-blue 出品中
@@ -111,15 +110,15 @@
 
         = link_to root_path do
           %li
-            .right-content__block__object__link-box
+            .abeshi-right-content__block__object__link-box
               =image_tag "avatar.jpg", alt: "item-img",class: "right-content__block__object__link-box__img",width:"47.99px",height:"47.99px"
-              .right-content__block__object__link-box__body
-                .right-content__block__object__link-box__body--text 「阿部寛」を購入しました。取引が完了しました。
-                .right-content__block__object__link-box__body__detail.middle
-                  .right-content__block__object__link-box__body__detail--count-box
+              .abeshi-right-content__block__object__link-box__body
+                .abeshi-right-content__block__object__link-box__body--text 「阿部寛」を購入しました。取引が完了しました。
+                .abeshi-right-content__block__object__link-box__body__detail.middle
+                  .abeshi-right-content__block__object__link-box__body__detail--count-box
                     %i.fa.fa-heart-o
                     .like-count 50
-                  .right-content__block__object__link-box__body__detail--count-box
+                  .abeshi-right-content__block__object__link-box__body__detail--count-box
                     %i.fa.fa-comment-o
                     .comment-count 1000
                   .status-gray 取引完了
@@ -129,15 +128,15 @@
 
         = link_to root_path do
           %li
-            .right-content__block__object__link-box
+            .abeshi-right-content__block__object__link-box
               =image_tag "avatar.jpg", alt: "item-img",class: "right-content__block__object__link-box__img",width:"47.99px",height:"47.99px"
-              .right-content__block__object__link-box__body
-                .right-content__block__object__link-box__body--text 【新品・送料込み】阿部寛
-                .right-content__block__object__link-box__body__detail.middle
-                  .right-content__block__object__link-box__body__detail--count-box
+              .abeshi-right-content__block__object__link-box__body
+                .abeshi-right-content__block__object__link-box__body--text 【新品・送料込み】阿部寛
+                .abeshi-right-content__block__object__link-box__body__detail.middle
+                  .abeshi-right-content__block__object__link-box__body__detail--count-box
                     %i.fa.fa-heart-o
                     .like-count 50
-                  .right-content__block__object__link-box__body__detail--count-box
+                  .abeshi-right-content__block__object__link-box__body__detail--count-box
                     %i.fa.fa-comment-o
                     .comment-count 1000
                   .status-red 公開停止中
@@ -145,11 +144,11 @@
 
         = link_to root_path do
           %li
-            .right-content__block__object__link-box
-              =image_tag "avatar.jpg", alt: "item-img",width:"47.99px",height:"47.99px",class: ".right-content__block__object__link-box__img"
+            .abeshi-right-content__block__object__link-box
+              =image_tag "avatar.jpg", alt: "item-img",width:"47.99px",height:"47.99px",class: ".abeshi-right-content__block__object__link-box__img"
               .sold-item
                 .sold-item--text SOLD
-              .right-content__block__object__link-box__body
-                .right-content__block__object__link-box__body--text 【新品・送料込み】阿部寛
-                .right-content__block__object__link-box__body__detail.middle ¥5,000
+              .abeshi-right-content__block__object__link-box__body
+                .abeshi-right-content__block__object__link-box__body--text 【新品・送料込み】阿部寛
+                .abeshi-right-content__block__object__link-box__body__detail.middle ¥5,000
               %i.fa.fa-angle-right.fa-2x

@@ -1,0 +1,12 @@
+.large-content-box
+  .large-profile-content.middle
+    = render 'modules/mypage-sidebar'
+    .profile-box
+      %h2.profile.head.middle-center プロフィール
+      %input{name: "__csrf_value", type: "hidden", value: ""}/
+      .profile-icon.middle-center{ src:""}
+        %img.content{ src: "//static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png", }/
+        %input.nickname{name: "nickname", placeholder: "例)AYA☆セール中", type: "text", value: ""}/
+      .message-content
+        %textarea.message-default{name: "introduction", placeholder: "例）こんにちは☆ "}
+        %button.profile.btn-default.btn.back-red{type:"submit"} 変更する

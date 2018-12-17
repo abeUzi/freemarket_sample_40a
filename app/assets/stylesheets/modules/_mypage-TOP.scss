@@ -40,9 +40,35 @@
 
 
 
+.sold-item{
+  width: 40px;
+  height: 40px;
+  border-top: 20px solid red;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid red;
+  position: absolute;
+  top: 16px;
+  &--text{
+    color: white;
+    font-size: 11px;
+    transform: rotate( -45deg );
+    position: absolute;
+    top:-15px;
+    left: -23px;
+  }
+}
 
 
+//
 
+.main-content{
+  padding: 40px;
+  width: 1100px;
+  margin: 40px auto 0 ;
+  display: flex;
+  align-items:flex-start;
+}
 
 .abeshi-right-content{
   width: 700px;
@@ -130,7 +156,3 @@
   }
 
 }
-
-
-
-

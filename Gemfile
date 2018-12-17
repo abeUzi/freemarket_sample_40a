@@ -65,7 +65,6 @@ gem 'pry-rails'
 gem 'rspec-rails'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
-gem "gretel"
 group :production do
   gem 'unicorn'
 end

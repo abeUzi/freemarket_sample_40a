@@ -1,0 +1,68 @@
+.large-cprofile-ontent{
+  width:1020px;
+  margin: 40px auto 0;
+  display: flex;
+}
+
+
+.profile-box{
+  width: 700px;
+  // height: 568px;
+  background-color: white;
+  align-self:flex-start;
+}
+
+h2.profile.head{
+  padding: 8px 24px;
+  border-bottom: 1px solid white;
+}
+
+.profile-icon{
+  padding: 72px 16px 24px;
+  // background-image: url(/jp/assets/img/mypage/user-bg.jpg?21600664);
+
+}
+
+img.content{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+
+}
+
+.nickname{
+  width: 220px;
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+  margin: 0 0 0 8px;
+
+}
+
+
+.message-content{
+  padding: 40px 16px;
+}
+
+.message-default{
+  min-height: 194px;
+  display: block;
+  width: 646px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+  padding:10px;
+}
+
+.btn-profile{
+  width: 100%;
+  height:50px;
+  border: 1px solid red;
+  color: white;
+  margin:16px 0 0;
+}

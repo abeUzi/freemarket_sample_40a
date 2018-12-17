@@ -1,36 +1,36 @@
-.right-content.center
-  .right-content__box.middle-center
+.abeshi-right-content.center
+  .abeshi-right-content__box.middle-center
     %h2.bold.confirm-buy 購入を確定しますか?
-  .right-content__box
+  .abeshi-right-content__box
     .width-320.center.text-center
       = image_tag "item-abeshi.jpg", alt: "avatar",class: "right-content__box--img marginT-8px;",width:"148px",heigth:"148px"
-      %h4.right-content__box--title.bold.marginT-8px 人肉ミート
-      .right-content__box--price.marginT-8px
+      %h4.abeshi-right-content__box--title.bold.marginT-8px 人肉ミート
+      .abeshi-right-content__box--price.marginT-8px
         %h1 ¥ 680
-        .right-content__box--price--postage 送料込み
+        .abeshi-right-content__box--price--postage 送料込み
       .link-bar.back-gray.marginT-8px ポイントはありません
-      .right-content__box--payment.bold.marginT-8px
+      .abeshi-right-content__box--payment.bold.marginT-8px
         %h1 支払い金額
         %h1 ¥ 680
       .font-red.marginT-8px 配送先と支払い方法の入力を完了してください。
       .link-bar.buttun-disabled.marginT-8px.font-white 購入する
 
 
-  .right-content__box
+  .abeshi-right-content__box
     .width-320.center
-      .right-content__box__inner-address
+      .abeshi-right-content__box__inner-address
         .bold 配送先
-        .right-content__box__inner-address--text
+        .abeshi-right-content__box__inner-address--text
           - text = "〒553-3456 \n魔界村 屍人町 右目2−1−5 \nぞんびさん"
           = simple_format text
-        .right-content__box__inner-address--change
+        .abeshi-right-content__box__inner-address--change
           = link_to "変更する＞", root_path
-  .right-content__box
+  .abeshi-right-content__box
     .width-320.center
-      .right-content__box__inner-address
+      .abeshi-right-content__box__inner-address
         .bold 支払い方法
-        .right-content__box__inner-address--text
+        .abeshi-right-content__box__inner-address--text
           - text = "対価は支払ってもらう！\nお前の命でな！"
           = simple_format text
-        .right-content__box__inner-address--change
+        .abeshi-right-content__box__inner-address--change
           = link_to "変更する＞", root_path
