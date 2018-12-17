@@ -1,0 +1,14 @@
+.main-content
+  = render 'modules/mypage-sidebar'
+  .right-content
+    .right-content__box.middle-center
+      %h2.bold クレジットカード情報入力
+    .right-content__box
+      .right-content__box__contena
+        %h4.right-content__box__contena__card--text.bold クレジットカード一覧
+        = link_to root_path do
+          .link-bar.back-red.font-white.right-content__box__contena__card--bar
+            %i.fa.fa-credit-card
+            クレジットカードを追加する
+    .right-content__box.pay-way
+      = link_to "支払い方法について＞", root_path,class: "pay-way--text"
