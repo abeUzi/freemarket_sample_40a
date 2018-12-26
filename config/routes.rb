@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'items#index'
   resources 'items'
   get 'mypage/card' => 'mypages#card'
+  get 'mypage/card/create' => 'mypages#buy'
   get 'mypage/logout' => 'mypages#logout'
   resources :mypages, path: 'mypage'
   delete 'items/:id' =>'items#destroy'

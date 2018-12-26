@@ -5,6 +5,8 @@ def index
   @items = Item.new
 end
 
+def buy
+end
 
 def new
   @items = Item.new

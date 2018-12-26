@@ -1,0 +1,59 @@
+- breadcrumb :mypage_card
+.main-content
+  = render 'modules/mypage-sidebar'
+  .abeshi-right-content
+    = form_with
+    .abeshi-right-content__box.middle-center
+      %h2.bold クレジットカード情報入力
+    .abeshi-right-content__box
+      .abeshi-right-content__box__contena
+        .abeshi-card-number
+          %h4.bold カード番号
+          %span{class: "exhibit_must font-white "} 必須
+        %input.card-number{placeholder: '半角数字のみ'}
+        %ul{class: "card_kind margin_T8"}
+          %li
+            %img{src: "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?4136293187", width: 49, height: 20}
+          %li
+            %img{src: "//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?4136293187", width: 34, height: 20}
+          %li
+            %img{src: "//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?4136293187", width: 30, height: 20}
+          %li
+            %img{src: "//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?4136293187", width: 32, height: 20}
+          %li
+            %img{src: "//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?4136293187", width: 21, height: 20}
+          %li
+            %img{src: "//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?4136293187", width: 32, height: 20}
+          %li
+            %img{src: "//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?4136293187", width: 32, height: 20}
+        .abeshi-card-expiration
+          %h4.bold 有効期限
+          %span{class: "exhibit_must font-white "} 必須
+        .card-select-box
+          .relative-box
+            %select{class: "card-select"}
+              %option
+                01
+            %i.fa.fa-angle-down.absolute
+          %p
+            月
+        .card-select-box.margin8
+          .relative-box
+            %select{class: "card-select"}
+              %option
+                18
+            %i.fa.fa-angle-down.absolute
+          %p
+            年
+        .abeshi-card-expiration
+          %h4.bold セキュリティコード
+          %span{class: "exhibit_must font-white "} 必須
+        %input.card-number{placeholder: 'カード背面4桁もしくは3桁の番号'}
+        .abeshi-card-back.margin8
+          %a{href: "", class: "help"}
+            ?
+          %p{class: "blue"}
+            カード裏面の番号とは?
+        = link_to root_path do
+          .link-bar.back-red.font-white.abeshi-right-content__box__contena__card--bar.margin74
+            追加する
