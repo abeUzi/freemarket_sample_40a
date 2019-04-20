@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # 出品ページのカテゴリー、ブランドの非同期通信用
   post 'items/category/search' => 'categories#search'
   post 'items/brand/search' => 'brands#search'
+  post 'images' => 'images#create'
 
   get 'user/:id' => 'users#show'
   post 'rate/:id' => 'rates#create'

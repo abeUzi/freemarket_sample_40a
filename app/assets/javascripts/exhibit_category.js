@@ -25,6 +25,7 @@ $(document).on('turbolinks:load', function() {
     .done(function(data){
       if(data.categories == ""){}
       else{
+        // カテゴリーボックスを作り、中に次のカテゴリー候補を入れている
         category_append()
         var add_box = document.getElementById("category_box")
         $.each(data.categories,function(i,category){

@@ -1,11 +1,35 @@
+/ カテゴリの階層化する場合、selectのidの値をJSを参考にして適切なものにしてください
+
 .exhibit_wrapper
-  = form_with model:@item,local: true,class: :main__exhibit do |item|
+  = form_with model:@item,remote: false,class: :main__exhibit do |item|
     .main__exhibit__title.middle-center
       %h3.bold
         商品の情報を入力
     .main__exhibit__box
-    - @item.images.each do |image|
-      = render "item_excard"
+      %h4.bold
+        出品画像
+        %span{class: "exhibit_must font-white"}
+          必須
+      %p{class: "exhibit_text"}
+        最大4枚までアップロードできます
+      .upload_image_box
+        %ul.upload_image_box--img.back-silver
+          - @images.each do |image|
+            %li#image_list
+              .upload_image_box--img--image.middle
+                %img{:src => "#{image.image}"}
+              .upload_image_box--img--buttun
+                %a#image_henshu.middle-center 編集
+                %a#image_delete.middle-center 削除
+                %input#images_ids{:name => "item[images_ids][]", :required => "required", :style => "display:none", :value => "#{image.id}"}
+
+        .upload_image_box--text.back-gray
+          .upload_item_image.bold 念じる
+          %br
+          .upload_item_image.bold またはクリックで画像アップロード
+
+
+
     .main__exhibit__box
       .main__exhibit__box__name
         %p{class: "bold"}
@@ -29,80 +53,27 @@
           カテゴリー
           %span{class: "exhibit_must font-white"}
             必須
-        .select_box.hide{id: "select_box"}
+        #category_box
+          .select_box{id: "select_box"}
+            %i.fa.fa-angle-down.exhibit
+            = item.collection_select :category_id, Category.where(parent_id:nil), :id, :name,{include_blank: "---"},{class: "exhibit_select exhibit_select_category",required:true}
+
+        .category.size
+          %p{class: "bold"}
+            サイズ
+            %span{class: "exhibit_must font-white"}
+              必須
+        .select_box.size
           %i.fa.fa-angle-down.exhibit
-          = item.collection_select :category_id, Category.all, :id, :name,{include_blank: "---"},{class: "exhibit_select",id: 1,required:true}
-        / 階層カテゴリ部分、現状不要ですが将来的に利用する可能性があるためコメントアウトしています。
-        / .select_box.second.1
-        /   %i.fa.fa-angle-down.exhibit
-        /   %select{class: "exhibit_select", id: "2"}
-        /     %option{value: '3'}
-        /       \---
-        /     %option{value: '4'}
-        /       Tシャツ
-        /     %option{value: '5'}
-        /       スカート
-        / .select_box.second.2
-        /   %i.fa.fa-angle-down.exhibit
-        /   %select{class: "exhibit_select", id: "3"}
-        /     %option{value: '6'}
-        /       \---
-        /     %option{value: '7'}
-        /       パーカー
-        /     %option{value: '8'}
-        /       ジャケット
-        / .select_box.third.1
-        /   %i.fa.fa-angle-down.exhibit
-        /   %select{class: "exhibit_select", id: "4"}
-        /     %option{value: '9'}
-        /       \---
-        /     %option{value: '10'}
-        /       美しいやつ
-        /     %option{value: '11'}
-        /       美しくないやつ
-        / .select_box.third.2
-        /   %i.fa.fa-angle-down.exhibit
-        /   %select{class: "exhibit_select", id: "5"}
-        /     %option{value: '12'}
-        /       \---
-        /     %option{value: '13'}
-        /       可愛くないやつ
-        /     %option{value: '14'}
-        /       可愛いやつ
-        / .select_box.third.3
-        /   %i.fa.fa-angle-down.exhibit
-        /   %select{class: "exhibit_select", id: "6"}
-        /     %option{value: '15'}
-        /       \---
-        /     %option{value: '16'}
-        /       男前なやつ
-        /     %option{value: '17'}
-        /       男前じゃないやつ
-        / .select_box.third.4
-        /   %i.fa.fa-angle-down.exhibit
-        /   %select{class: "exhibit_select", id: "7"}
-        /     %option{value: '18'}
-        /       \---
-        /     %option{value: '19'}
-        /       格好よくないやつ
-        /     %option{value: '20'}
-        /       格好いいやつ
-        / サイズはアソシエーションが完成したら？
-        / .category.size
-        /   %p{class: "bold"}
-        /     サイズ
-        /     %span{class: "exhibit_must font-white"}
-        /       必須
-        / .select_box.hide.size
-        /   %i.fa.fa-angle-down.exhibit
-        /   = item.select :category_id, [["\---",0],["S",1],["M",2],["L",3]],{},{class: "exhibit_select", id: "1"}
+          %select.exhibit_select.exhibit_select_size{name: "item[size_id]"}
         .category.brand
           %p{class: "bold"}
             ブランド
             %span{class: "exhibit_should"}
               任意
-        .select_box.hide.brand
-          %input{class: "exhibit_select", placeholder: '例）阿部寛'}
+        .select_box.brand
+          = item.text_field :brand,maxlength:"40",class: "exhibit_select exhibit_select_brand",placeholder: '阿部寛',autocomplete:"off"
+        %ul#brand_options
         %p{class: "top bold"}
           商品の状態
           %span{class: "exhibit_must font-white"}
@@ -178,21 +149,20 @@
         またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
         %br
         また、出品をもちまして加盟店規約に同意したことになります。
-        = item.submit "出品する",class: "exhibit_btn back-red font-white"
+        = item.submit "出品する",class: "exhibit_btn back-red font-white",:id => 'openModal2'
       %button{class: "exhibit_return font-white"}
         もどる
 
-    / 本来の画像アップロード部分
-    / .main__exhibit__box
-    /   .main__exhibit__box__text
-    /     %h4.bold
-    /       出品画像
-    /       %span{class: "exhibit_must font-white"}
-    /         必須
-    /     %p{class: "exhibit_text"}
-    /       最大4枚までアップロードできます
-    /   .upload_image_box
-    /     %input.image_hidden{type: "file"}
-    /     %pre.upload_item_image.bold
-    /       ドラッグアンドドロップ
-    /       またはクリックしてファイルをアップロード
+= form_with model:@image,local: true,class: :main__exhibit__image do |img|
+  = img.file_field :image,id: "image_uploader",style: "display:none"
+  = img.submit "送信",id: "image_submit",style: "display:none"
+
+%section#modalArea2.modalArea2
+  .modalBg2
+    .modalinner2
+      .modalhead.bold 出品が完了しました
+      .sell-modal-body
+        .look あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます。
+        %a{:id => :closeModal, class: "btn-syuppin", :href => "/items/new"} 続けて出品する
+        %p.text-center2
+          %a{:href => "/"} トップページに戻る

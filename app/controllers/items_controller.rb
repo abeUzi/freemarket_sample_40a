@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    4.times {@item.images.build}
+    @image = Image.new
     render :new, layout: "sub-layout"
   end
 
@@ -33,6 +33,8 @@ class ItemsController < ApplicationController
     @item =Item.new(exhibit_params)
     brand == nil ? @item.brand_id = 1 : @item.brand_id = brand.id
     @item.save
+
+    save_itemID_on_images
     if @item.save
       respond_to do |format|
         format.js
@@ -57,7 +59,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    render :new, layout: "sub-layout"
+    @images = Image.where(item_id:params[:id])
+    binding.pry
+    # render :new, layout: "sub-layout"
   end
 
   def update
@@ -70,12 +74,19 @@ class ItemsController < ApplicationController
 
   private
   def exhibit_params
-    params[:item].permit(:name,:description,:condition_id,:postage_id,:delivery_method_id,:prefecture_id,:delivery_day_id,:price,:category_id,:size_id,images_attributes:[:id,:image]).merge(user_id:current_user.id)
+    params[:item].permit(:name,:description,:condition_id,:postage_id,:delivery_method_id,:prefecture_id,:delivery_day_id,:price,:category_id,:size_id).merge(user_id:current_user.id)
   end
 
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def save_itemID_on_images
+    images_ids = params[:item][:images_ids]
+    images_ids.each do |image|
+      Image.find(image).update(item_id:@item.id)
+    end
   end
 
   def user_collation
